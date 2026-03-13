@@ -1,0 +1,61 @@
+body{
+margin:0;
+overflow:hidden;
+background:black;
+font-family:Arial, Helvetica, sans-serif;
+color:white;
+}
+
+/* Canvas fills the screen */
+canvas{
+display:block;
+}
+
+/* Title */
+.title{
+position:absolute;
+top:20px;
+left:50%;
+transform:translateX(-50%);
+font-size:36px;
+font-weight:bold;
+text-shadow:0 0 10px #ffffff, 0 0 20px #4fd1ff;
+}
+
+/* Instructions text */
+.instructions{
+position:absolute;
+top:80px;
+left:50%;
+transform:translateX(-50%);
+text-align:center;
+font-size:15px;
+opacity:0.85;
+line-height:1.6;
+}
+
+/* Control panel */
+.controls{
+position:fixed;
+bottom:30px;
+left:50%;
+transform:translateX(-50%);
+}
+
+/* Dropdown styling */
+select{
+padding:10px 15px;
+font-size:16px;
+border-radius:8px;
+border:none;
+outline:none;
+cursor:pointer;
+background:white;
+color:black;
+font-weight:500;
+}
+
+/* Hover effect */
+select:hover{
+background:#f0f0f0;
+}
