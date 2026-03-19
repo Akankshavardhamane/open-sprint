@@ -1,11 +1,29 @@
-body{
-margin:0;
-overflow:hidden;
-background:black;
-font-family:Arial, Helvetica, sans-serif;
-color:white;
+:root {
+    --primary: #4fd1ff;
+    --accent: #ff00c1;
+    --glass: rgba(255, 255, 255, 0.1);
 }
-
+body {
+    margin: 0;
+    overflow: hidden;
+    background: radial-gradient(circle at center, #0a0a2e 0%, #000000 100%);
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    color: white;
+}
+/* Glassmorphism Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    background: var(--glass);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    z-index: 100;
+}
 /* Canvas fills the screen */
 canvas{
 display:block;
@@ -33,29 +51,68 @@ font-size:15px;
 opacity:0.85;
 line-height:1.6;
 }
-
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+.logo span { color: var(--primary); animation: glow 2s infinite alternate; }
 /* Control panel */
-.controls{
-position:fixed;
-bottom:30px;
-left:50%;
-transform:translateX(-50%);
+/* Interactive Controls */
+.controls {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1.5rem;
+    border-radius: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    border: 1px solid rgba(255,255,255,0.2);
+    z-index: 100;
 }
 
-/* Dropdown styling */
-select{
-padding:10px 15px;
-font-size:16px;
-border-radius:8px;
-border:none;
-outline:none;
-cursor:pointer;
-background:white;
-color:black;
-font-weight:500;
+.glass {
+    background: rgba(15, 15, 15, 0.7);
+    backdrop-filter: blur(15px);
 }
 
-/* Hover effect */
-select:hover{
-background:#f0f0f0;
+.btn, .btn-danger {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.btn { background: var(--primary); color: #000; }
+.btn-danger { background: #ff4d4d; color: white; }
+.btn:hover { transform: scale(1.1); box-shadow: 0 0 15px var(--primary); }
+
+.instructions {
+    position: absolute;
+    top: 100px;
+    width: 100%;
+    text-align: center;
+    pointer-events: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    opacity: 0.6;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 5px var(--primary); }
+    to { text-shadow: 0 0 20px var(--primary), 0 0 30px var(--accent); }
+}
+
+.footer {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.7rem;
+    opacity: 0.4;
 }
