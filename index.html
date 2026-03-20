@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <nav class="navbar">
         <div class="logo">🌌 CURSOR<span>UNIVERSE</span></div>
         <div class="status">Mode: <span id="current-mode">Explorer</span></div>
@@ -17,15 +18,33 @@
     <canvas id="canvas"></canvas>
 
     <div class="controls glass">
+
+        <!-- Existing Controls -->
         <div class="control-group">
             <label>Sound</label>
             <button id="toggle-audio" class="btn">OFF</button>
         </div>
+
         <div class="control-group">
             <label>Size</label>
             <input type="range" id="size-slider" min="1" max="10" value="3">
         </div>
+
         <button id="clear-btn" class="btn-danger">Clear Space</button>
+
+        <!-- ⭐ NEW FEATURE: MODE SELECTOR -->
+        <div class="control-group">
+            <label>Mode</label>
+            <select id="mode-selector" class="btn">
+                <option value="auto">Auto</option>
+                <option value="star">Star</option>
+                <option value="fire">Fire</option>
+                <option value="water">Water</option>
+                <option value="blackhole">Black Hole</option>
+                <option value="lightning">Lightning</option>
+            </select>
+        </div>
+
     </div>
 
     <footer class="footer">

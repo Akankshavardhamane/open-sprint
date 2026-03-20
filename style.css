@@ -116,3 +116,27 @@ line-height:1.6;
     font-size: 0.7rem;
     opacity: 0.4;
 }
+/* ================= NEW FEATURES ================= */
+
+/* Light Theme */
+.light-mode {
+    background: radial-gradient(circle at center, #ffffff 0%, #dfe9f3 100%);
+    color: black;
+}
+
+.light-mode .navbar,
+.light-mode .controls {
+    background: rgba(255,255,255,0.7);
+    color: black;
+}
+
+/* Dynamic Color Variable */
+:root {
+    --dynamic-color: #4fd1ff;
+}
+
+/* Apply dynamic color to buttons */
+.btn {
+    background: var(--dynamic-color);
+    color: #000;
+}
